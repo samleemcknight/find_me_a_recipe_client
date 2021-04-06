@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, StatusBar, Button } from 'react-native';
 import { NativeRouter, Route, Link } from "react-router-native";
 import Header from './components/Header'
 import Routes from './config/routes'

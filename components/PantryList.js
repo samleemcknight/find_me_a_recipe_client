@@ -1,10 +1,10 @@
 import React from 'react'
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { NativeRouter, Route, Link } from "react-router-native";
 
 import PantryForm from '../forms/PantryForm'
 
-export default function PantryList() {
+export default function PantryList(props) {
   return(
     <View style={styles.view}>
       <Text style={styles.text}>Welcome!</Text>
