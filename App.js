@@ -1,21 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { NativeRouter, Route, Link } from "react-router-native";
+import Header from './components/Header'
+import Routes from './config/routes'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Test Test Test</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeRouter>
+        <StatusBar barStyle="light-content" translucent={true} />
+        <Header />
+        <Routes style={styles.container} />
+    </NativeRouter>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 6,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  statusBar: {
+
+  }
 });
