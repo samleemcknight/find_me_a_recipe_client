@@ -1,22 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { StyleSheet, Text, SafeAreaView, LayoutAnimation, FlatList, Button, Alert } from 'react-native';
 import SwipeRow from '../components/SwipeRow'
 import IngredientModel from '../models/ingredient'
 
-export default function PantryItem(props) {
-  const [pantry, setPantry] = useState(null)
+export default function PantryItem() {
+  const [pantry, setPantry] = useState()
 
-  const propRender = async () => {
-    await props.ingredients
-    if (!pantry) {
-      setPantry(props.ingredients)
-    }
-  }
-
-  propRender()
+  // use effect
+  useEffect(() => {
+    IngredientModel.all()
+    .then(data => {
+      setPantry(data.ingredients.reverse())
+      return pantry
+    })
+  }, [pantry])
 
   const deleteItem = async (item) => {
-    // await IngredientModel.delete(item.name)
+    await IngredientModel.delete(item.name)
     const updatedData = pantry.filter(el => el !== item)
     // Animate list to close gap when item is deleted
     LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)

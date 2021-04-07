@@ -7,30 +7,23 @@ export default function PantryForm() {
   const [ingredient, setIngredient] = useState("")
   const [ingredients, setIngredients] = useState([])
 
-  useEffect(() => {
-    if (!ingredients.length) {
-      IngredientModel.all()
-      .then(data => {
-        // if the DB returns ingredients, then make an object to be passed to PantryItem component
-        if (data) {
-          for (let i = 0; i < data.ingredients.length; i++) {
-            setIngredients(arr => [...arr, {key: (i+1).toString(), name: data.ingredients[i].name}])
-          }
-        }
-      })
-    } 
-  }, [])
+  // useEffect(() => {
+  //   // function
+  //   IngredientModel.all()
+  //   .then(data => {
+  //     setIngredients(data.ingredients.reverse())
+  //   })
+  // }, [JSON.stringify(ingredients)])
 
-  function handleText(event) {
+  const handleText = (event) => {
     event.preventDefault()
-    setIngredients(arr => [...arr, {key: (ingredients.length+1).toString(), name: ingredient}])
-    setIngredient("")
-    // IngredientModel.addIngredient(ingredient)
-    // .then(data => {
-    //     setIngredients(arr => [...arr, ingredient])
-    //     setIngredient("")
+    // setIngredients(arr => [...arr, {key: (ingredients.length+1).toString(), name: ingredient}])
+    // setIngredient("")
+    IngredientModel.addIngredient(ingredient)
+    .then(data => {
         
-    //   })
+        setIngredient("")
+      })
   }
 
   return (
@@ -43,7 +36,7 @@ export default function PantryForm() {
         value={ingredient}
         enablesReturnKeyAutomatically={true}
         clearButtonMode="while-editing"/>
-        { ingredients.length ? <PantryItem ingredients={ingredients} /> : <Text>Loading...</Text>}
+        <PantryItem />
     </View>
   )
 }
@@ -55,6 +48,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     textAlign: "center",
     padding: 5,
+    fontSize: 18
   },
   pantryContainer : {
     marginBottom: 15

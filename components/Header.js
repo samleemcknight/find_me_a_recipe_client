@@ -10,12 +10,15 @@ export default function Header() {
         <Icon 
           name='three-bars' 
           size={35} 
-          color='#cdc' 
+          color='#fef' 
         />
       </View>
       <View style={styles.li}>
         <Link to="/welcome">
-            <Text style={{fontSize: 25}}>Pantry</Text>
+          <Text style={styles.text}>Pantry</Text>
+        </Link>
+        <Link to="/">
+          <Text style={styles.text}>Home</Text>
         </Link>
       </View>
     </SafeAreaView>
@@ -24,13 +27,19 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   view: {
-    flex: 1,
+    height: 100,
     flexDirection: "row",
     backgroundColor: "#135762",
     alignItems: "center"
   },
   li: {
-    justifyContent: "space-around",
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginLeft: 20
+  },
+  text: {
+    fontSize: 25, 
+    marginLeft: 20, 
+    color: "#fef"
   }
 })
