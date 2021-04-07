@@ -6,7 +6,9 @@ import PantryItem from '../components/PantryItem'
 
 export default function PantryForm() {
   const [ingredient, setIngredient] = useState("")
+  // for passing as prop to child component in handleText function. this will trigger a re-render
   const [pantryItem, setPantryItem] = useState("")
+  // to redirect to recipes (home) page after buton is pressed
   const [redirect, setRedirect] = useState(false)
 
   const handleText = (event) => {
@@ -22,7 +24,6 @@ export default function PantryForm() {
 
   useEffect(() => {
     setIngredient(ingredient)
-    console.log(ingredient)
   }, [ingredient])
 
   const generateRecipes = (recipes) => {

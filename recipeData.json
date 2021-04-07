@@ -1,4 +1,4 @@
-{
+
   [
         {
             "id": 83863,
@@ -271,7 +271,7 @@
         },
         {
             "id": 345210,
-            "title": "Split Whole Cumin Chicken",
+            "title": "Whole Split Cumin Chicken",
             "image": "https://spoonacular.com/recipeImages/345210-312x231.jpeg",
             "imageType": "jpeg",
             "usedIngredientCount": 6,
@@ -1594,4 +1594,3 @@
             "likes": 0
         }
     ]
-}

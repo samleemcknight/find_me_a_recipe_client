@@ -9,7 +9,7 @@ export default function useRecipes() {
     // RecipeModel.getRecipes().then(data => {
     //   setRecipes(data.recipes)
     // })
-    setRecipes(RecipeData.json())
+    setRecipes(RecipeData)
   }
 
   useEffect(() => {
