@@ -4,7 +4,7 @@ import {View, Text, StyleSheet, Image} from 'react-native'
 export default function RecipeCard(props) {
   return(
     <View style={styles.view}>
-      <Text style={{fontSize:25}}>{props.title}</Text>
+      <Text style={{fontSize:20, textAlign: "center", padding: 10}}>{props.title}</Text>
     </View>
   )
 }

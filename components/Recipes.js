@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react'
-import {RefreshControl, View, Image, SafeAreaView, Text, StyleSheet, ScrollView} from 'react-native'
+import {RefreshControl, View, Image, SafeAreaView, Text, StyleSheet, ScrollView, TouchableOpacity} from 'react-native'
 import {Link} from 'react-router-native'
 import useRecipes from '../hooks/useRecipes'
 import RecipeCard from '../components/RecipeCard'
@@ -20,7 +20,7 @@ export default function Recipes() {
   const renderRecipes = (recipes) => {
     return recipes.map((recipe, index) => (
       <View style={styles.view} key={index}>
-        <Link to={`recipe/${recipe.id}`}>
+        <Link to={`recipe/${recipe.id}`} component={TouchableOpacity} activeOpacity={0.3}>
           <RecipeCard {...recipe} />
         </Link>
         <Image style={styles.image} source={{uri: recipe.image}} />
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   image: {
-    marginTop: -30,
+    marginTop: -40,
     marginBottom: 30,
     width: 100,
     height: 100,
