@@ -1,29 +1,25 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Button, Alert, View, TextInput } from 'react-native';
+import {Redirect} from 'react-router-native'
 import IngredientModel from '../models/ingredient'
 import PantryItem from '../components/PantryItem'
 
 export default function PantryForm() {
   const [ingredient, setIngredient] = useState("")
-  const [ingredients, setIngredients] = useState([])
-
-  // useEffect(() => {
-  //   // function
-  //   IngredientModel.all()
-  //   .then(data => {
-  //     setIngredients(data.ingredients.reverse())
-  //   })
-  // }, [JSON.stringify(ingredients)])
+  const [redirect, setRedirect] = useState(false)
 
   const handleText = (event) => {
     event.preventDefault()
     // setIngredients(arr => [...arr, {key: (ingredients.length+1).toString(), name: ingredient}])
     // setIngredient("")
     IngredientModel.addIngredient(ingredient)
-    .then(data => {
-        
-        setIngredient("")
-      })
+    .then(data => {   
+      setIngredient("")
+    })
+  }
+
+  const generateRecipes = (recipes) => {
+    setRedirect(!redirect)
   }
 
   return (
@@ -36,7 +32,12 @@ export default function PantryForm() {
         value={ingredient}
         enablesReturnKeyAutomatically={true}
         clearButtonMode="while-editing"/>
+        <Button 
+          title="Get Cooking" 
+          color="red" 
+          onPress={generateRecipes}/>
         <PantryItem />
+        { redirect ? <Redirect to="/" /> : <></>}
     </View>
   )
 }

@@ -6,12 +6,11 @@ import Routes from './config/routes'
 
 export default function App() {
   return (
-      <NativeRouter>
-          <StatusBar barStyle="light-content" translucent={true} />
-          <Header />
-          <Routes />
-          
-      </NativeRouter>
+    <NativeRouter>
+      <StatusBar barStyle="light-content" translucent={true} />
+      <Header />
+      <Routes />
+    </NativeRouter>
   );
 }
 

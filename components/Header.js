@@ -18,7 +18,7 @@ export default function Header() {
           <Text style={styles.text}>Pantry</Text>
         </Link>
         <Link to="/">
-          <Text style={styles.text}>Home</Text>
+          <Text style={styles.text}>Find Recipes</Text>
         </Link>
       </View>
     </SafeAreaView>

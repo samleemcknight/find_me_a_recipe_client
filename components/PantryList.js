@@ -1,6 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { NativeRouter, Route, Link } from "react-router-native";
+import { StyleSheet, Text, View } from 'react-native';
 
 import PantryForm from '../forms/PantryForm'
 

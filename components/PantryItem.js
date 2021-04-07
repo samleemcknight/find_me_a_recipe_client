@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, Text, SafeAreaView, LayoutAnimation, FlatList, Button, Alert } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, LayoutAnimation, FlatList, } from 'react-native';
 import SwipeRow from '../components/SwipeRow'
 import IngredientModel from '../models/ingredient'
 
@@ -40,11 +40,9 @@ export default function PantryItem() {
        data={pantry}
        renderItem={renderItem}
        ListFooterComponent={
-        <Button 
-          title="Get Cooking" 
-          color="red" 
-          onPress={() => Alert.alert('Pressed')}
-        />
+        <>
+        <View style={{marginBottom: 100}}></View>
+        </>
        }
        />
     </SafeAreaView >
