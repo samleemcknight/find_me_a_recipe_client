@@ -3,17 +3,17 @@ import { StyleSheet, Text, SafeAreaView, View, LayoutAnimation, FlatList, } from
 import SwipeRow from '../components/SwipeRow'
 import IngredientModel from '../models/ingredient'
 
-export default function PantryItem() {
+export default function PantryItem(props) {
   const [pantry, setPantry] = useState()
-
+  
   // use effect
   useEffect(() => {
     IngredientModel.all()
     .then(data => {
       setPantry(data.ingredients.reverse())
-      return pantry
+      console.log(props.ingredient)
     })
-  }, [pantry])
+  }, [props.ingredient])
 
   const deleteItem = async (item) => {
     await IngredientModel.delete(item.name)

@@ -6,17 +6,24 @@ import PantryItem from '../components/PantryItem'
 
 export default function PantryForm() {
   const [ingredient, setIngredient] = useState("")
+  const [pantryItem, setPantryItem] = useState("")
   const [redirect, setRedirect] = useState(false)
 
   const handleText = (event) => {
     event.preventDefault()
     // setIngredients(arr => [...arr, {key: (ingredients.length+1).toString(), name: ingredient}])
-    // setIngredient("")
+    // setIngredient("")  
     IngredientModel.addIngredient(ingredient)
-    .then(data => {   
+    .then(data => {
+      setPantryItem(ingredient)
       setIngredient("")
     })
   }
+
+  useEffect(() => {
+    setIngredient(ingredient)
+    console.log(ingredient)
+  }, [ingredient])
 
   const generateRecipes = (recipes) => {
     setRedirect(!redirect)
@@ -36,7 +43,7 @@ export default function PantryForm() {
           title="Get Cooking" 
           color="red" 
           onPress={generateRecipes}/>
-        <PantryItem />
+        <PantryItem ingredient={pantryItem} />
         { redirect ? <Redirect to="/" /> : <></>}
     </View>
   )
