@@ -1,6 +1,8 @@
 import React, {useState, useCallback} from 'react'
 import {RefreshControl, View, Image, SafeAreaView, Text, StyleSheet, ScrollView} from 'react-native'
+import {Link} from 'react-router-native'
 import useRecipes from '../hooks/useRecipes'
+import RecipeCard from '../components/RecipeCard'
 
 export default function Recipes() {
   const [recipes, getRecipes] = useRecipes()
@@ -17,8 +19,10 @@ export default function Recipes() {
 
   const renderRecipes = (recipes) => {
     return recipes.map((recipe, index) => (
-      <View>
-        <Text key={index} style={{fontSize:20}}>{recipe.title}</Text>
+      <View style={styles.view} key={index}>
+        <Link to={`recipe/${recipe.id}`}>
+          <RecipeCard {...recipe} />
+        </Link>
         <Image style={styles.image} source={{uri: recipe.image}} />
       </View>
     ))
@@ -41,12 +45,15 @@ export default function Recipes() {
 const styles = StyleSheet.create({
   view: {
     flex: 6,
-    flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginBottom: 10, 
+    marginTop: 10
   },
   image: {
-    width: 66,
-    height: 58,
+    marginTop: -30,
+    marginBottom: 30,
+    width: 100,
+    height: 100,
   },
 })

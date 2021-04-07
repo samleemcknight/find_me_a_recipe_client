@@ -5,6 +5,11 @@ class RecipeModel {
     const recipes = await fetch(`${url}/find`)
     return recipes.json()
   }
+
+  static showRecipe = async (id) => {
+    const recipe = await fetch(`${url}/show/${id}`)
+    return recipe.json()
+  }
 }
 
 export default RecipeModel
