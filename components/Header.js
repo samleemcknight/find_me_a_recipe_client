@@ -1,12 +1,19 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { StyleSheet, Text, View, SafeAreaView, Alert } from 'react-native';
 import { Link } from 'react-router-native'
 import Icon from 'react-native-vector-icons/Octicons';
 
+import DropDownMenu from '../header/index'
+
 export default function Header() {
+  const [iconPress, setIconPress] = useState()
+
+  useEffect(() => {
+   setIconPress(false)
+  }, [])
 
   const dropDown = () => {
-    Alert.alert("nice", "hamburger pressed")
+    setIconPress(!iconPress)
   }
 
   return(
@@ -19,17 +26,11 @@ export default function Header() {
           onPress={dropDown} 
         />
       </View>
-      <View style={styles.li}>
-        <Link to="/">
-          <Text style={styles.text}>Pantry</Text>
-        </Link>
-        <Link to="/welcome">
-          <Text style={styles.text}>Find Recipes</Text>
-        </Link>
-        <Link to="/cookbook">
-          <Text style={styles.text}>Cookbook</Text>
-        </Link>
-      </View>
+      {iconPress 
+      ? 
+      <DropDownMenu />  
+      : 
+      <></> }
     </SafeAreaView>
   )
 }
@@ -37,7 +38,7 @@ export default function Header() {
 const styles = StyleSheet.create({
   view: {
     position: "absolute",
-    height: 100,
+    height: 80,
     width: "100%",
     flexDirection: "row",
     backgroundColor: "#135762",
