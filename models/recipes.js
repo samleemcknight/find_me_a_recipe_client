@@ -22,6 +22,16 @@ class RecipeModel {
     }
     const ingredientsToString = await getString(data.extendedIngredients)
 
+    const instructions = ""
+    // some of the recipes don't have instructions, hence the following conditionals:
+    if (data.instructions) {
+      instructions = data.instructions
+    } else if (data.summary) {
+      instructions = data.summary
+    } else {
+      instructions = "Uh oh! It appears that there weren't any instructions that came with this recipe!"
+    }
+
     const addedRecipe = await fetch(url, {
       method: 'POST',
       headers: {
@@ -29,7 +39,7 @@ class RecipeModel {
       },
       body: JSON.stringify({
         title: data.title,
-        instructions: data.instructions,
+        instructions: instructions,
         image_url: data.image,
         ingredients: ingredientsToString
       })

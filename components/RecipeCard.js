@@ -11,11 +11,9 @@ export default function RecipeCard(props) {
 }
 const styles = StyleSheet.create({
   view: {
-    flex: 6,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 10, 
-    marginTop: 10
   },
   image: {
     width: 100,

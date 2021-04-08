@@ -48,14 +48,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 30, 
-    marginTop: 0
+    marginTop: 10,
+    marginBottom: 20,
+    padding: 10,
   },
   image: {
-    marginTop: -55,
+    marginTop: -60,
     marginBottom: 10,
-    width: 100,
+    width: 150,
     height: 100,
-    
   },
 })
