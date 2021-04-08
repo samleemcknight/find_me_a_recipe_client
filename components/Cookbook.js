@@ -6,7 +6,7 @@ import CookbookCard from './CookbookCard'
 export default function Cookbook() {
   
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, marginTop: 100}}>
       <CookbookCard /> 
     </SafeAreaView>
   )

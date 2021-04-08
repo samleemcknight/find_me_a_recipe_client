@@ -16,6 +16,7 @@ export default function PantryList(props) {
 const styles = StyleSheet.create({
   view: {
     flex: 6,
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: 100
   },
 })

@@ -35,7 +35,7 @@ export default function Recipes() {
         <RefreshControl
           refreshing={refreshing}
           onRefresh={onRefresh}/>}>
-      <SafeAreaView style={styles.view}>
+      <SafeAreaView style={{marginTop: 100, alignItems: "center"}}>
         <Text style={{fontSize: 25, marginTop: 10}}>Recipes</Text>
         {recipes.length ? renderRecipes(recipes) : <Text>Loading...</Text> }
       </SafeAreaView>
@@ -49,12 +49,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 30, 
-    marginTop: 10
+    marginTop: 0
   },
   image: {
-    marginTop: -50,
+    marginTop: -55,
     marginBottom: 10,
     width: 100,
     height: 100,
+    
   },
 })
