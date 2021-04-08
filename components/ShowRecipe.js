@@ -35,7 +35,7 @@ export default function ShowRecipes(props) {
         <RecipeText {...recipe} />
         <Text style={styles.text}>{recipe.instructions}</Text>
       </ScrollView>
-      <View style={styles.buttonContainer}>
+      <View style={styles.buttonContainer, {position: "absolute", bottom: 0, width: "100%"}}>
         <TouchableOpacity
           style={styles.background}
           onPress={favorite} >

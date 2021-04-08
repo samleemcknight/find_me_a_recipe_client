@@ -24,7 +24,7 @@ export default function Recipes() {
           <RecipeCard {...recipe} />
         </Link>
         <Image style={styles.image} source={{uri: recipe.image}} />
-        <Text style={{textAlign: "center", marginBottom: 20, padding: 10}}>You have {recipe.usedIngredientCount} ingredients in your pantry of the {(recipe.usedIngredientCount + recipe.missedIngredientCount)} necessary for this recipe.</Text>
+        <Text style={{textAlign: "center", marginBottom: 20, padding: 10}}>You have {recipe.usedIngredientCount} ingredients in your pantry of the {(recipe.usedIngredientCount + recipe.missedIngredientCount)} this recipe calls for.</Text>
       </View>
     ))
   }
@@ -35,7 +35,7 @@ export default function Recipes() {
         <RefreshControl
           refreshing={refreshing}
           onRefresh={onRefresh}/>}>
-      <SafeAreaView style={{marginTop: 100, alignItems: "center"}}>
+      <SafeAreaView style={{marginTop: 100, marginBottom: 30, alignItems: "center"}}>
         <Text style={{fontSize: 25, marginTop: 10}}>Recipes</Text>
         {recipes.length ? renderRecipes(recipes) : <Text>Loading...</Text> }
       </SafeAreaView>
