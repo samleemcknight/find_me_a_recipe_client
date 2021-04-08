@@ -26,7 +26,7 @@ export default function ShowRecipes(props) {
   }
 
   return(
-    <View style={styles.view}>
+    <View style={styles.view, {marginTop: 100}}>
       <ScrollView>
         <RecipeCard {...recipe} />
         <View style={{alignItems: "center"}}>
