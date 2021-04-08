@@ -6,11 +6,6 @@ class RecipeModel {
     return recipes.json()
   }
 
-  static getCookbook = async () => {
-    const recipes = await fetch(url)
-    return recipes.json()
-  }
-
   static showRecipe = async (id) => {
     const recipe = await fetch(`${url}/show/${id}`)
     return recipe.json()
@@ -18,7 +13,7 @@ class RecipeModel {
 
   static favorite = async (data) => {
     let ingredients = []
-
+    // nicely formats the array of ingredients into a string
     const getString = (el) => {
       for (let i = 0; i < el.length; i++) {
         ingredients.push(el[i].name)
