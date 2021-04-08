@@ -11,7 +11,7 @@ export default function DropDownMenu() {
   const [x, setX] = useState(0)
 
   useEffect(() => {
-    console.log(height)
+    
     if (height === "t") {
       
       Animated.timing(

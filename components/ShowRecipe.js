@@ -10,7 +10,7 @@ const styles = require('../style/styles')
 
 export default function ShowRecipes(props) {
   const [recipe] = useRecipes(props.match.params.id)
-
+  
   const alert = () => {
     Alert.alert(
       "Added to Favorites!",
@@ -33,7 +33,7 @@ export default function ShowRecipes(props) {
           <Image style={styles.image} source={{uri: recipe.image}} />
         </View>
         <RecipeText {...recipe} />
-        <Text style={styles.text}>{recipe.instructions}</Text>
+        <Text style={styles.text}>{recipe.instructions ? recipe.instructions : recipe.summary}</Text>
       </ScrollView>
       <View style={styles.buttonContainer, {position: "absolute", bottom: 0, width: "100%"}}>
         <TouchableOpacity
