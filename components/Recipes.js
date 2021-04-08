@@ -24,6 +24,7 @@ export default function Recipes() {
           <RecipeCard {...recipe} />
         </Link>
         <Image style={styles.image} source={{uri: recipe.image}} />
+        <Text style={{textAlign: "center", marginBottom: 20, padding: 10}}>You have {recipe.usedIngredientCount} ingredients in your pantry of the {(recipe.usedIngredientCount + recipe.missedIngredientCount)} necessary for this recipe.</Text>
       </View>
     ))
   }
@@ -44,15 +45,15 @@ export default function Recipes() {
 
 const styles = StyleSheet.create({
   view: {
-    flex: 6,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 10, 
+    marginBottom: 30, 
     marginTop: 10
   },
   image: {
-    marginTop: -40,
-    marginBottom: 30,
+    marginTop: -50,
+    marginBottom: 10,
     width: 100,
     height: 100,
   },

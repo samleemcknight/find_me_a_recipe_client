@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, Button, Alert, View, TextInput } from 'react-native';
+import { StyleSheet, Button, TouchableOpacity, Text, View, TextInput } from 'react-native';
 import {Redirect} from 'react-router-native'
 import IngredientModel from '../models/ingredient'
 import PantryItem from '../components/PantryItem'
+
+const styles = require('../style/styles')
 
 export default function PantryForm() {
   const [ingredient, setIngredient] = useState("")
@@ -27,10 +29,11 @@ export default function PantryForm() {
   }, [ingredient])
 
   const generateRecipes = (recipes) => {
-    setRedirect(!redirect)
+    setRedirect(true)
   }
 
   return (
+    <>
     <View style={styles.pantryContainer}>
       <TextInput 
         style={styles.form} 
@@ -40,26 +43,16 @@ export default function PantryForm() {
         value={ingredient}
         enablesReturnKeyAutomatically={true}
         clearButtonMode="while-editing"/>
-        <Button 
-          title="Get Cooking" 
-          color="red" 
-          onPress={generateRecipes}/>
-        <PantryItem ingredient={pantryItem} />
-        { redirect ? <Redirect to="/" /> : <></>}
+      <PantryItem ingredient={pantryItem} />
+      { redirect ? <Redirect to="/welcome" /> : <></>}
     </View>
+    <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.background}
+          onPress={generateRecipes} >
+          <Text style={styles.button}>Get Cooking</Text>
+        </TouchableOpacity>
+    </View>
+    </>
   )
 }
-
-const styles = StyleSheet.create({
-  form: {
-    width: 300,
-    borderBottomColor: "#000",
-    borderBottomWidth: 0.5,
-    textAlign: "center",
-    padding: 5,
-    fontSize: 18
-  },
-  pantryContainer : {
-    marginBottom: 15
-  }
-})

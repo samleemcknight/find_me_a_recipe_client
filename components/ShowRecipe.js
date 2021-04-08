@@ -21,9 +21,8 @@ export default function ShowRecipes(props) {
   const favorite = () => {
     RecipeModel.favorite(recipe)
     .then(response => {
-      console.log(response)
+      alert()
     })
-    alert()
   }
 
   return(

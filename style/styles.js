@@ -33,5 +33,17 @@ module.exports = {
   },
   background: {
     backgroundColor: "#135762",
+  },
+  form: {
+    width: 300,
+    borderBottomColor: "#000",
+    borderBottomWidth: 0.5,
+    textAlign: "center",
+    padding: 5,
+    fontSize: 18
+  },
+  pantryContainer : {
+    flex: 1,
+    marginBottom: 15
   }
 }

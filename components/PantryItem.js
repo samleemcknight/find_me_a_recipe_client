@@ -11,7 +11,6 @@ export default function PantryItem(props) {
     IngredientModel.all()
     .then(data => {
       setPantry(data.ingredients.reverse())
-      console.log(props.ingredient)
     })
   }, [props.ingredient])
 

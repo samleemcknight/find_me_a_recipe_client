@@ -14,11 +14,14 @@ export default function Header() {
         />
       </View>
       <View style={styles.li}>
-        <Link to="/welcome">
+        <Link to="/">
           <Text style={styles.text}>Pantry</Text>
         </Link>
-        <Link to="/">
+        <Link to="/welcome">
           <Text style={styles.text}>Find Recipes</Text>
+        </Link>
+        <Link to="/cookbook">
+          <Text style={styles.text}>Cookbook</Text>
         </Link>
       </View>
     </SafeAreaView>
@@ -38,7 +41,7 @@ const styles = StyleSheet.create({
     marginLeft: 20
   },
   text: {
-    fontSize: 25, 
+    fontSize: 18, 
     marginLeft: 20, 
     color: "#fef"
   }
