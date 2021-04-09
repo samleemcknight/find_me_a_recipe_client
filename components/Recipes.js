@@ -35,7 +35,7 @@ export default function Recipes() {
         <RefreshControl
           refreshing={refreshing}
           onRefresh={onRefresh}/>}>
-      <SafeAreaView style={{marginTop: 100, marginBottom: 30, alignItems: "center"}}>
+      <SafeAreaView style={{marginTop: 100, marginBottom: 30, alignItems: "center" }}>
         <Text style={{fontSize: 25, marginTop: 10}}>Recipes</Text>
         {recipes.length ? renderRecipes(recipes) : <Text>Loading...</Text> }
       </SafeAreaView>

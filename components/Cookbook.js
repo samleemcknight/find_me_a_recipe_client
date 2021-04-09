@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { SafeAreaView, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { SafeAreaView, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import CookbookCard from './CookbookCard'
 import {Link} from 'react-router-native'
 import CookbookModel from '../models/cookbook';
@@ -21,11 +21,11 @@ export default function Cookbook() {
         { cookbook 
         ? 
         cookbook.map((item, key) => (
-          <>
-          <Link to={`Cookbook/${item.id}`} key={key} component={TouchableOpacity} activeOpacity={0.3}>
+          <View key={key}>
+          <Link to={`Cookbook/${item.id}`} component={TouchableOpacity} activeOpacity={0.3}>
             <CookbookCard {...item} /> 
           </Link>
-          </>
+          </View>
         ))
         :
         <Text>Loading...</Text>}

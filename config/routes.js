@@ -10,6 +10,7 @@ import ShowCookbook from "../components/ShowCookbook";
 const routes = () => {
   return (
     <Switch>
+      <Route exact path="/" />
       <Route exact path="/Recipes" component={Recipes} />
       <Route exact path="/Pantry" component={PantryList}/>
       <Route path="/Recipes/:id" component={ShowRecipe} />

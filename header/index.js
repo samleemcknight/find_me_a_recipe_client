@@ -37,7 +37,7 @@ export default function DropDownMenu() {
     <View style={{paddingLeft:10}}>
         <Icon 
           name='three-bars' 
-          size={40} 
+          size={45} 
           color='#fef'
           onPress={dropDown} 
         />

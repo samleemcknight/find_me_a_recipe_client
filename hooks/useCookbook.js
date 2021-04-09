@@ -6,7 +6,6 @@ export default function useCookbook(recipeId, recipeTitle) {
 
   function getCookbook(id, title) {
     CookbookModel.show(id, title).then(data => {
-      console.log(data)
       setCookbook(data.recipe)
     })
     
