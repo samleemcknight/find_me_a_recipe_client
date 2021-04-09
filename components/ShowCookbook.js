@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {View, Text, Button, TouchableOpacity, ScrollView} from 'react-native'
+import {View, Text, Button, Alert, ScrollView} from 'react-native'
 import CookbookModel from '../models/cookbook'
 import CookbookCard from './CookbookCard'
 
@@ -14,6 +14,27 @@ export default function ShowCookbook(props) {
       setRecipe(res.recipe)
     })
   }, [])
+
+  const deleteRecipe = () => {
+    CookbookModel.deleteRecipe(props.match.params.id)
+  }
+
+  const deleteDialog = () => {
+    Alert.alert(
+      "Delete Recipe?",
+      "Are you sure you want to delete this recipe? This cannot be undone.",
+      [
+        {
+          text: "Cancel",
+          style: "cancel"
+        },
+        {
+          text: "OK",
+          onPress: deleteRecipe,
+        }
+      ]
+    )
+  }
 
   return (
     <ScrollView style={{flex:1, marginTop: 100}}>
@@ -31,7 +52,7 @@ export default function ShowCookbook(props) {
         <Button title="Edit" onPress={() => {}} color="blue"/>
       </View>
       <View style={{marginBottom: 20}} >
-        <Button title="Remove from Favorites" onPress={() => {}} color="red"/>
+        <Button title="Remove from Favorites" onPress={deleteDialog} color="red"/>
       </View>
       </>
       :
