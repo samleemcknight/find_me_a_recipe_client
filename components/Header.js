@@ -5,7 +5,6 @@ import DropDownMenu from '../header/index'
 import ShowTheLocation from '../config/routeHistory'
 
 export default function Header(props) {
-  console.log(props)
   return(
     <SafeAreaView style={styles.view}>
       <DropDownMenu />

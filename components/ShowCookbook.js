@@ -13,7 +13,7 @@ export default function ShowCookbook(props) {
   
   useEffect(() => {
     setRedirect(false)
-    CookbookModel.show(props.match.params.id)
+    CookbookModel.show(props.match.params.id, "title")
   .then(res => {
       setRecipe(res.recipe)
     })

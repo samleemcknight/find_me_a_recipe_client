@@ -9,8 +9,8 @@ class CookbookModel {
     return recipes.json()
   }
 
-  static show = async (id) => {
-    const recipe = await fetch(`${url}/${id}`)
+  static show = async (id, title) => {
+    const recipe = await fetch(`${url}/show/${id}?title=${title}`)
     return recipe.json()
   }
 
