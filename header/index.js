@@ -5,44 +5,30 @@ import Icon from 'react-native-vector-icons/Octicons';
 import { Link } from 'react-router-native'
 
 export default function DropDownMenu() {
-  const dropAnim = useRef(new Animated.Value(0)).current
-  const foldAnim = useRef(new Animated.Value(80)).current
-  const [height, setHeight] = useState("f")
-  const [x, setX] = useState(0)
+  const animatedValue = useRef(new Animated.Value(0)).current
+  const [isOn, setIsOn] = useState(false)
 
   useEffect(() => {
-    
-    if (height === "t") {
-      
-      Animated.timing(
-        dropAnim,
-        {
-          toValue: 80,
-          duration: 300,
-          useNativeDriver: false,
-        },
-        ).start();
-    }
-    else if (height === "f") {
-      Animated.timing(
-        foldAnim,
-        {
-          toValue: 0,
-          duration: 300,
-          useNativeDriver: false,
-        },
-        ).start();
-    }
-  }, [height])
+    setIsOn(false)
+  }, [])
+
 
   const dropDown = () => { 
-    if (height === "t") {
-      setHeight("f")
-      setX(foldAnim)
+    if (isOn === false) {
+      setIsOn(!isOn)
+      Animated.timing(animatedValue, {
+        toValue: 80,
+        duration: 300,
+        useNativeDriver: false
+      }).start()
     }
-    else if (height === "f") {
-      setHeight("t")
-      setX(dropAnim)
+    if (isOn === true) {
+      setIsOn(!isOn)
+      Animated.timing(animatedValue, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: false
+      }).start()
     }
   }
 
@@ -62,7 +48,7 @@ export default function DropDownMenu() {
         flex: 1,
         backgroundColor: "#000", 
         width: "100%",
-        height: x,
+        height: animatedValue,
         flexDirection: "row",
         justifyContent: "space-evenly",
         alignItems: "center", 
