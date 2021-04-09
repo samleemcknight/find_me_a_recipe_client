@@ -19,7 +19,10 @@ class CookbookModel {
   // remove recipe from cookbook 
   static deleteRecipe = async (id) => {
     const recipe = await fetch(`${url}/delete/${id}`, {method: "DELETE"})
-    return Alert.alert("Recipe deleted")
+    return Alert.alert(
+      "Deleted",
+      "Recipe deleted."
+    )
   }
 
 }
