@@ -20,7 +20,7 @@ export default function Recipes() {
   const renderRecipes = (recipes) => {
     return recipes.map((recipe, index) => (
       <View style={styles.view} key={index}>
-        <Link to={`recipe/${recipe.id}`} component={TouchableOpacity} activeOpacity={0.3}>
+        <Link to={`Recipes/${recipe.id}`} component={TouchableOpacity} activeOpacity={0.3}>
           <RecipeCard {...recipe} />
         </Link>
         <Image style={styles.image} source={{uri: recipe.image}} />

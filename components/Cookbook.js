@@ -22,7 +22,7 @@ export default function Cookbook() {
         ? 
         cookbook.map((item, key) => (
           <>
-          <Link to={`cookbook/${item.id}`} key={key} component={TouchableOpacity} activeOpacity={0.3}>
+          <Link to={`Cookbook/${item.id}`} key={key} component={TouchableOpacity} activeOpacity={0.3}>
             <CookbookCard {...item} /> 
           </Link>
           </>

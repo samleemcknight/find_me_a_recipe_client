@@ -44,7 +44,7 @@ export default function PantryForm() {
         enablesReturnKeyAutomatically={true}
         clearButtonMode="while-editing"/>
       <PantryItem ingredient={pantryItem} />
-      { redirect ? <Redirect to="/welcome" /> : <></>}
+      { redirect ? <Redirect to="/Recipes" /> : <></>}
     </View>
     <View style={styles.buttonContainer}>
         <TouchableOpacity

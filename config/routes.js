@@ -10,11 +10,11 @@ import ShowCookbook from "../components/ShowCookbook";
 const routes = () => {
   return (
     <Switch>
-      <Route path="/welcome" component={Recipes} />
-      <Route exact path="/" component={PantryList}/>
-      <Route path="/recipe/:id" component={ShowRecipe} />
-      <Route exact path="/cookbook" component={Cookbook} />
-      <Route path="/cookbook/:id" component={ShowCookbook} />
+      <Route exact path="/Recipes" component={Recipes} />
+      <Route exact path="/Pantry" component={PantryList}/>
+      <Route path="/Recipes/:id" component={ShowRecipe} />
+      <Route exact path="/Cookbook" component={Cookbook} />
+      <Route path="/Cookbook/:id" component={ShowCookbook} />
     </Switch>
   )
 }

@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import { StyleSheet, View, SafeAreaView } from 'react-native';
-import Icon from 'react-native-vector-icons/Octicons';
 
 import DropDownMenu from '../header/index'
+import ShowTheLocation from '../config/routeHistory'
 
-export default function Header() {
-
+export default function Header(props) {
+  console.log(props)
   return(
     <SafeAreaView style={styles.view}>
       <DropDownMenu />
+      <ShowTheLocation />
     </SafeAreaView>
   )
 }

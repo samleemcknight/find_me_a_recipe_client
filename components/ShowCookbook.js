@@ -66,7 +66,7 @@ export default function ShowCookbook(props) {
       :
       <Text>Loading...</Text>
       }
-      {redirect ? <Redirect to="/cookbook" /> : <></>}
+      {redirect ? <Redirect to="/Cookbook" /> : <></>}
     </ScrollView>
   )
 }

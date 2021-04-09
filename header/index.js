@@ -53,13 +53,13 @@ export default function DropDownMenu() {
         justifyContent: "space-evenly",
         alignItems: "center", 
         top: 80 }}>
-      <Link to="/" onPress={dropDown}>
+      <Link to="/Pantry" onPress={dropDown}>
         <Text style={styles.text}>Pantry</Text>
       </Link>
-      <Link to="/welcome" onPress={dropDown} >
+      <Link to="/Recipes" onPress={dropDown} >
         <Text style={styles.text}>Find Recipes</Text>
       </Link>
-      <Link to="/cookbook" onPress={dropDown}>
+      <Link to="/Cookbook" onPress={dropDown}>
         <Text style={styles.text}>Cookbook</Text>
       </Link>
     </Animated.View>
