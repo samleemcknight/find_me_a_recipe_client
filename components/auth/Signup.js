@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import { Text, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native';
-import { Link } from 'react-router-native'
+import { Text, SafeAreaView, Alert, TextInput, TouchableOpacity } from 'react-native';
+import { Redirect } from 'react-router-native'
 
 import AuthModel from '../../models/auth'
 
 const styles = require('../../style/styles')
 
-export default function Signup() {
+export default function Signup(props) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
@@ -22,6 +22,17 @@ export default function Signup() {
   useEffect(() => {
     setPassword(password)
   }, [password])
+
+  const register = () => {
+    
+    AuthModel.register({
+      username: username,
+      password: password,
+      email: email
+    }).then(res => {
+      console.log(res)
+    })
+  }
 
   return(
     <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
@@ -50,7 +61,7 @@ export default function Signup() {
         value={password}/>
       <TouchableOpacity
         style={{backgroundColor: "#1CAAB3", width: "40%", borderRadius: 25, padding: 6, marginTop: 10}}
-        onPress={() => {}}
+        onPress={register}
         >
         <Text style={styles.button}>Sign Up</Text>
       </TouchableOpacity>

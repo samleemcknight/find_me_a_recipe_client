@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import { Text, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native';
-import { Link } from 'react-router-native'
-import Signup from "./Signup";
+import { Link, Redirect } from 'react-router-native'
 
 import AuthModel from '../../models/auth'
 
 const styles = require('../../style/styles')
 
-export default function Login() {
+export default function Login(props) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [redirect, setRedirect] = useState(false)
 
   useEffect(() => {
     setUsername(username)
@@ -23,7 +23,15 @@ export default function Login() {
   const authenticate = () => {
     AuthModel.login(username, password)
     .then(response => {
-      console.log(response)
+      if (response.username) {
+        console.log(response.username)
+        // this.props.setUpdateUser({
+        //   loggedIn: true,
+        //   username: response.username
+        // })
+        console.log('redirect')
+        setRedirect(true)
+      }
     }).catch(error => {})
   }
 
@@ -57,6 +65,7 @@ export default function Login() {
           <Text style={{fontSize: 18, textDecorationLine: "underline", color: "#1021f1"}}>Create an Account.</Text>
         </Link>
       </View>
+      {redirect ? <Redirect to="/Pantry" /> : <></>}
     </SafeAreaView>
   )
 }
