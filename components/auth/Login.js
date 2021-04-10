@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import { Text, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, Alert, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native';
 import { Link, Redirect } from 'react-router-native'
 
 import AuthModel from '../../models/auth'
-
+import useAuth from '../../hooks/useAuth'
 const styles = require('../../style/styles')
 
 export default function Login(props) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [redirect, setRedirect] = useState(false)
+  const [user] = useAuth()
 
   useEffect(() => {
     setUsername(username)
@@ -21,18 +22,19 @@ export default function Login(props) {
 
 
   const authenticate = () => {
-    AuthModel.login(username, password)
-    .then(response => {
-      if (response.username) {
-        console.log(response.username)
-        // this.props.setUpdateUser({
-        //   loggedIn: true,
-        //   username: response.username
-        // })
-        console.log('redirect')
-        setRedirect(true)
-      }
-    }).catch(error => {})
+    if (!user) {
+      AuthModel.login(username, password)
+      .then(response => {
+        if (response.username) {
+          console.log("Username: ", response.username)
+          setUsername(response.username)
+          console.log('redirect')
+          setRedirect(true)
+        }
+      }).catch(error => {})
+    } else {
+      return Alert.alert("You are already logged in")
+    }
   }
 
   return(
