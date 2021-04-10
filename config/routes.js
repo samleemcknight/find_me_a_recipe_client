@@ -6,11 +6,11 @@ import Recipes from '../components/Recipes'
 import ShowRecipe from '../components/ShowRecipe'
 import Cookbook from '../components/Cookbook'
 import ShowCookbook from "../components/ShowCookbook";
+import Login from '../components/auth/Login'
 
 const routes = () => {
   return (
     <Switch>
-      <Route exact path="/" />
       <Route exact path="/Recipes" component={Recipes} />
       <Route exact path="/Pantry" component={PantryList}/>
       <Route path="/Recipes/:id" component={ShowRecipe} />

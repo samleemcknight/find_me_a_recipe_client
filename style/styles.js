@@ -42,6 +42,15 @@ module.exports = {
     padding: 5,
     fontSize: 18
   },
+  loginForm: {
+    width: 300,
+    borderBottomColor: "#000",
+    borderBottomWidth: 0.5,
+    textAlign: "center",
+    padding: 5,
+    fontSize: 20,
+    marginBottom: 10
+  },
   pantryContainer : {
     flex: 1,
     marginBottom: 15

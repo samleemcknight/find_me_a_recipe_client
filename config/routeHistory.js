@@ -19,7 +19,7 @@ class ShowTheLocation extends Component {
       componentName = name
     }
     
-    return <Text style={{ fontSize: 20, marginLeft: 15, color: "#fef"}}>{componentName}</Text>;
+    return <Text style={{ fontSize: 20, left: 15, color: "#fef"}}>{componentName}</Text>;
   }
 }
 

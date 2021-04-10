@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, View, SafeAreaView } from 'react-native';
+import { StyleSheet, SafeAreaView, Text } from 'react-native';
+import {Link} from 'react-router-native'
 
 import DropDownMenu from '../header/index'
 import ShowTheLocation from '../config/routeHistory'
@@ -9,6 +10,9 @@ export default function Header(props) {
     <SafeAreaView style={styles.view}>
       <DropDownMenu />
       <ShowTheLocation />
+      {/* <Link >
+        <Text style={{ display: "absolute", fontSize: 20, color: "#fef", paddingLeft: 200}}>Logout</Text>
+      </Link> */}
     </SafeAreaView>
   )
 }
