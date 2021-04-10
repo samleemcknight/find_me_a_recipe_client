@@ -1,6 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
 import { View, StyleSheet, Text, Animated } from 'react-native';
-import { set } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/Octicons';
 import { Link } from 'react-router-native'
 
