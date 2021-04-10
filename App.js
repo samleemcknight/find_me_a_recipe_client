@@ -5,12 +5,14 @@ import { NativeRouter } from "react-router-native";
 import Header from './components/Header'
 import Routes from './config/routes'
 import Login from './components/auth/Login'
+import Signup from './components/auth/Signup'
 
 export default function App() {
   return (
     <NativeRouter>
         <StatusBar barStyle="light-content" translucent={true} />
         <Route exact path="/" render={() => <Login />} />
+        <Route exact path="/Signup" render={() => <Signup />} />
         <Header />
         <Routes />
     </NativeRouter>
