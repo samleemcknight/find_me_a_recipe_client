@@ -30,22 +30,6 @@ export default function Login(props) {
     setUser()
   }
 
-  // const authenticate = () => {
-  //   if (!user) {
-  //     AuthModel.login(username, password)
-  //     .then(response => {
-  //       if (response.username) {
-  //         console.log("Username: ", response.username)
-  //         setUsername(response.username)
-  //         console.log('redirect')
-  //         setUser()
-  //       }
-  //     }).catch(error => {})
-  //   } else {
-  //     return Alert.alert("You are already logged in")
-  //   }
-  // }
-
   return(
     <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
       <Text style={{fontSize: 35, marginTop: -20, marginBottom: 50}} >Login:</Text>

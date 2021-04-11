@@ -4,13 +4,20 @@ import { Redirect } from 'react-router-native'
 
 import AuthModel from '../../models/auth'
 
+import useAuth from '../../hooks/useAuth'
 const styles = require('../../style/styles')
 
 export default function Signup(props) {
+  // user info
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
+  // redirect 'switch'
+  const [redirect, setRedirect] = useState(false)
+  //user hook
+  const [user, getUser] = useAuth()
 
+  //stores user information in state
   useEffect(() => {
     setEmail(email)
   }, [email])
@@ -22,16 +29,20 @@ export default function Signup(props) {
   useEffect(() => {
     setPassword(password)
   }, [password])
+  //
+  // uses hook to get user, then redirect
+  const setUser = async () => {
+    await getUser
+    setRedirect(true)
+  }
 
   const register = () => {
-    
-    AuthModel.register({
+    props.register({
       username: username,
       password: password,
       email: email
-    }).then(res => {
-      console.log(res)
     })
+    setUser()
   }
 
   return(
@@ -64,6 +75,7 @@ export default function Signup(props) {
         onPress={register}
         >
         <Text style={styles.button}>Sign Up</Text>
+        {redirect ? <Redirect to="/Pantry" /> : <></>}
       </TouchableOpacity>
     </SafeAreaView>
   )

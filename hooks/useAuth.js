@@ -9,13 +9,13 @@ export default function useAuth() {
     .then(res => {
       return res.json().then(data => {
         if (data.status === 200) {
-          console.log("in setter function", data.user)
+          
           setUser({username: data.user.username})
         }
         else {
           setUser(null)
         }
-      }).catch(err => console.log(err))
+      }).catch(err => error)
     })
   }
   

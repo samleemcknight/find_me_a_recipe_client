@@ -24,7 +24,7 @@ class AuthModel {
         return Alert.alert("Registration Error", "Please Try Again")
       }
     } catch(error) {
-      console.log(error)
+      return error
     }
   }
 
@@ -46,7 +46,6 @@ class AuthModel {
     return fetch(`${url}/logout`)
     .then(res => {
       console.log("logged out")
-      console.log(res)
       res.json()
     })
   }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, StatusBar } from 'react-native';
+import { StyleSheet, StatusBar, Alert } from 'react-native';
 import {Route} from 'react-router-native'
 import { NativeRouter } from "react-router-native";
 import Header from './components/Header'
@@ -17,7 +17,7 @@ export default function App() {
 
   useEffect(() => {
     if (user) {
-      console.log("user object? ", user)
+      
       setLoggedIn(true)
     } 
   }, [user])
@@ -27,10 +27,9 @@ export default function App() {
       AuthModel.login(username, password)
       .then(response => {
         if (response.username) {
-          console.log("Username: ", response.username)
-          
-          console.log('redirect')
           setLoggedIn(true)
+        } else {
+          return Alert.alert("Incorrect Username/Password", "Please try again")
         }
       }).catch(error => {})
     } else {
@@ -45,12 +44,27 @@ export default function App() {
     })
   }
 
+  const register = (data) => {
+    
+    AuthModel.register({
+      username: data.username,
+      password: data.password,
+      email: data.email
+    }).then(res => {
+      
+      if (res.message === "success") {
+        setLoggedIn(true)
+      } else {
+        Alert.alert("Something went wrong. Please try again")
+      }
+    })
+  }
+
   return (
     <NativeRouter>
         <StatusBar barStyle="light-content" translucent={true} />
         <Route exact path="/" render={() => <Login authenticate={authenticate}  />} />
-        <Route exact path="/Signup" render={() => <Signup />} />
-        {/* <Header user={user} /> */}
+        <Route exact path="/Signup" render={() => <Signup register={register} />} />
         {loggedIn ? <Header logout={logout} /> : <></> }
         {loggedIn ? <Routes /> : <></> }
     </NativeRouter>
