@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, StatusBar, Alert } from 'react-native';
-import {Route} from 'react-router-native'
+import {Route, Redirect} from 'react-router-native'
 import { NativeRouter } from "react-router-native";
 import Header from './components/Header'
 import Routes from './config/routes'
@@ -13,6 +13,7 @@ import useAuth from './hooks/useAuth'
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false)
+  const [redirect, setRedirect] = useState(false)
   const [user, getUser] = useAuth()
 
   useEffect(() => {
@@ -28,11 +29,9 @@ export default function App() {
       .then(response => {
         if (response.username) {
           setLoggedIn(true)
-          return "username"
-        } else {
-          return Alert.alert("Incorrect Username/Password", "Please try again")
-        }
-      }).catch(error => {})
+          setRedirect(true)
+        } 
+      }).catch(error => Alert.alert("Incorrect Username/Password", "Please try again"))
     } else {
       return Alert.alert("You are already logged in")
     }
@@ -55,10 +54,11 @@ export default function App() {
       
       if (res.message === "success") {
         setLoggedIn(true)
+        setRedirect(true)
       } else {
         Alert.alert("Something went wrong. Please try again")
       }
-    })
+    }).catch(error => error)
   }
 
   return (
@@ -68,6 +68,7 @@ export default function App() {
         <Route exact path="/Signup" render={() => <Signup register={register} />} />
         {loggedIn ? <Header logout={logout} /> : <></> }
         {loggedIn ? <Routes /> : <></> }
+        {redirect ? <Redirect to="/Pantry" /> : <></>}
     </NativeRouter>
   );
 }

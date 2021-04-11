@@ -30,11 +30,6 @@ export default function Signup(props) {
     setPassword(password)
   }, [password])
   //
-  
-  // const setUser = async () => {
-  //   await getUser
-  //   setRedirect(true)
-  // }
 
   const register = () => {
     props.register({
@@ -42,9 +37,6 @@ export default function Signup(props) {
       password: password,
       email: email
     })
-    // uses hook to get user, then redirect
-    getUser()
-    setRedirect(true)
   }
 
   return(
@@ -77,7 +69,6 @@ export default function Signup(props) {
         onPress={register}
         >
         <Text style={styles.button}>Sign Up</Text>
-        {redirect ? <Redirect to="/Pantry" /> : <></>}
       </TouchableOpacity>
       <View style={{flexDirection: "row", marginTop: 30}}>
         <Text style={{fontSize: 18}}>Have an Account? </Text>
