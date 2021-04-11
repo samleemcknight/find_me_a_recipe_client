@@ -1,15 +1,20 @@
 import React, {useState, useEffect} from 'react'
-import { Text, Alert, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native';
 import { Link, Redirect } from 'react-router-native'
 
-import AuthModel from '../../models/auth'
 import useAuth from '../../hooks/useAuth'
+
+import { useFonts, Raleway_500Medium, Raleway_300Light } from '@expo-google-fonts/raleway';
 const styles = require('../../style/styles')
 
 export default function Login(props) {
+  let [fontsLoaded] = useFonts({
+    Raleway_300Light,
+    Raleway_500Medium,
+  });
+
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const [redirect, setRedirect] = useState(false)
   const [user, getUser] = useAuth()
 
   useEffect(() => {
@@ -32,7 +37,8 @@ export default function Login(props) {
 
   return(
     <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
-      <Text style={{fontSize: 35, marginTop: -20, marginBottom: 50}} >Login:</Text>
+      <Text style={{fontSize:35, marginBottom: 50, fontFamily: "Raleway_500Medium"}}>Find Me A Recipe</Text>
+      <Text style={{fontSize: 35, marginBottom: 40, fontFamily: "Raleway_300Light"}} >Login:</Text>
       <TextInput 
         style={styles.loginForm}
         placeholder="username"
@@ -60,7 +66,6 @@ export default function Login(props) {
           <Text style={{fontSize: 18, textDecorationLine: "underline", color: "#1021f1"}}>Create an Account.</Text>
         </Link>
       </View>
-      {redirect ? <Redirect to="/Pantry" /> : <></>}
     </SafeAreaView>
   )
 }

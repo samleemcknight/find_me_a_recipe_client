@@ -41,6 +41,7 @@ export default function App() {
     AuthModel.logout()
     .then(res => {
       setLoggedIn(false)
+      setRedirect(false)
     })
   }
 

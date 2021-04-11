@@ -5,9 +5,15 @@ import { Redirect, Link } from 'react-router-native'
 import AuthModel from '../../models/auth'
 
 import useAuth from '../../hooks/useAuth'
+
+import { useFonts, Raleway_500Medium } from '@expo-google-fonts/raleway';
 const styles = require('../../style/styles')
 
 export default function Signup(props) {
+  let [fontsLoaded] = useFonts({
+    Raleway_500Medium,
+  });
+
   // user info
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -41,7 +47,7 @@ export default function Signup(props) {
 
   return(
     <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
-      <Text style={{fontSize: 35, marginTop: -20, marginBottom: 50}} >Create an Account:</Text>
+      <Text style={{fontSize: 35, marginTop: -20, marginBottom: 50, fontFamily: "Raleway_500Medium"}} >Create an Account:</Text>
       <TextInput 
         style={styles.loginForm}
         placeholder="email"
