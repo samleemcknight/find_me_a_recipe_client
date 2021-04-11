@@ -14,7 +14,7 @@ const routes = () => {
       <Route exact path="/Recipes" component={Recipes} />
       <Route exact path="/Pantry" component={PantryList}/>
       <Route path="/Recipes/:id" component={ShowRecipe} />
-      {/* <Route path="/Edit/:id" component={EditCookbook} /> */}
+      
       <Route exact path="/Cookbook" component={Cookbook} />
       <Route path="/Cookbook/:id" component={ShowCookbook} />
     </Switch>

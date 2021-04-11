@@ -6,7 +6,6 @@ import CookbookModel from '../models/cookbook';
 
 export default function Cookbook() {
   const [cookbook, setCookbook] = useState([])
-  const [isEmpty, setIsEmpty] = useState()
 
   useEffect(() => {
     CookbookModel.getCookbook()
@@ -16,7 +15,7 @@ export default function Cookbook() {
         setCookbook([])
       }
       else {
-        setIsEmpty(false)
+        
         setCookbook(res.recipes)
       }
     })
@@ -27,11 +26,11 @@ export default function Cookbook() {
       return <Text style={{textAlign: "center", fontSize: 18, marginTop: 30}}>No favorite recipes yet</Text>
     } 
     return cookbook.map((item, key) => (
-          <View key={key}>
-          <Link to={`Cookbook/${item.id}`} component={TouchableOpacity} activeOpacity={0.3}>
-            <CookbookCard {...item} /> 
-          </Link>
-          </View> ))
+      <View key={key}>
+        <Link to={`Cookbook/${item.id}`} component={TouchableOpacity} activeOpacity={0.3}>
+          <CookbookCard {...item} /> 
+        </Link>
+      </View> ))
   }
 
   return (

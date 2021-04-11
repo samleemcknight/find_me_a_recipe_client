@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {View, Text, Button, Alert, ScrollView} from 'react-native'
-import {Redirect, Link, Route, NativeRouter} from 'react-router-native'
+import {Link, Route, NativeRouter} from 'react-router-native'
 
 import EditCookbook from './EditCookbook'
 
@@ -10,13 +10,11 @@ import CookbookCard from './CookbookCard'
 const styles = require("../style/styles")
 
 export default function ShowCookbook(props) {
-  const [redirect, setRedirect] = useState(false)
   const [recipe, setRecipe] = useState()
   
   useEffect(() => {
-    setRedirect(false)
     CookbookModel.show(props.match.params.id, "title")
-  .then(res => {
+    .then(res => {
       setRecipe(res.recipe)
     })
   }, [])
@@ -25,7 +23,7 @@ export default function ShowCookbook(props) {
     CookbookModel.deleteRecipe(props.match.params.id)
     // automatically redirects after 700ms
     setTimeout(() => {
-      setRedirect(true)
+      props.history.push("/Cookbook")
     }, 700);
   }
 
@@ -69,8 +67,7 @@ export default function ShowCookbook(props) {
       :
       <Text>Loading...</Text>
       }
-      <Route exact path="/Edit/:id" render={() => <EditCookbook {...recipe} />} />
-      {redirect ? <Redirect to="/Cookbook" /> : <></>}
+      <Route exact path="/Edit/:id" render={() => <EditCookbook recipe={recipe} history={props.history} />} />
     </ScrollView>
     </NativeRouter>
   )

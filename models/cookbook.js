@@ -15,8 +15,16 @@ class CookbookModel {
   }
 
   // edit recipe in cookbook
-  static edit = async (id) => {
-    const recipe = await fetch(`${url}/edit/${id}`)
+  static edit = async (data) => {
+    const recipe = await fetch(`${url}/edit/`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then(res => {
+      return res.json()
+    }).catch(err => error)
     // return logic:
   }
 
