@@ -41,6 +41,15 @@ class AuthModel {
     })
 
   }
+
+  static logout = () => {
+    return fetch(`${url}/logout`)
+    .then(res => {
+      console.log("logged out")
+      console.log(res)
+      res.json()
+    })
+  }
 }
 
 export default AuthModel

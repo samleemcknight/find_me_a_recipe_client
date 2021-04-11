@@ -1,18 +1,36 @@
 import React, {useState, useEffect} from 'react'
 import { StyleSheet, SafeAreaView, Text } from 'react-native';
-import {Link} from 'react-router-native'
-
+import { Redirect } from 'react-router-native'
 import DropDownMenu from '../header/index'
 import ShowTheLocation from '../config/routeHistory'
 
+import useAuth from '../hooks/useAuth'
+import AuthModel from '../models/auth';
+
 export default function Header(props) {
+  const [redirect, setRedirect] = useState(false)
+
+  const logout = () => {
+    props.logout()
+    setRedirect(true)
+    // AuthModel.logout()
+    // .then(res => {
+    //   setRedirect(true)
+    // })
+  }
+
   return(
     <SafeAreaView style={styles.view}>
       <DropDownMenu />
+       
+      <Text 
+        style={{ fontSize: 20, color: "#fef", position: "absolute", marginLeft: 300, bottom: 20}}
+        onPress={logout}>
+        Logout
+      </Text>
+      
       <ShowTheLocation />
-      {/* <Link >
-        <Text style={{ display: "absolute", fontSize: 20, color: "#fef", paddingLeft: 200}}>Logout</Text>
-      </Link> */}
+      { redirect ? <Redirect to="/" /> : <></>}
     </SafeAreaView>
   )
 }

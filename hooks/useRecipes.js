@@ -8,17 +8,17 @@ export default function useRecipes(recipeId) {
 
   function getRecipes(id) {
     if (id) {
-      // RecipeModel.showRecipe(id).then(data => {
-      //   setRecipes(data.recipe)
-      // })
-      setRecipes(showRecipe[0].recipe)
+      RecipeModel.showRecipe(id).then(data => {
+        setRecipes(data.recipe)
+      })
+      // setRecipes(showRecipe[0].recipe)
     }
     else {
       // commented out for the moment to prevent unecessary calls to API
 
-    // RecipeModel.getRecipes().then(data => {
-    //   setRecipes(data.recipes)
-    // })
+    RecipeModel.getRecipes().then(data => {
+      setRecipes(data.recipes)
+    })
 
     // sorting function to favor fewest missed ingredients over used ingredients
     function sortByMissed(a, b) {
@@ -35,11 +35,11 @@ export default function useRecipes(recipeId) {
       return 0
     }
 
-    // const newRecipes = recipes.sort(sortByMissed)
-    // setRecipes(recipes)
+    const newRecipes = recipes.sort(sortByMissed)
+    setRecipes(recipes)
 
-    const newRecipes = RecipeData.sort(sortByMissed)
-    setRecipes(newRecipes)
+    // const newRecipes = RecipeData.sort(sortByMissed)
+    // setRecipes(newRecipes)
     }
   }
 
