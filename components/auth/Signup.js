@@ -33,7 +33,8 @@ export default function Signup(props) {
   // uses hook to get user, then redirect
   const setUser = async () => {
     await getUser
-    setRedirect(true)
+    if (user) setRedirect(true)
+    // else  Alert.alert("Registration Error", "There was an error. Please try again.")
   }
 
   const register = () => {

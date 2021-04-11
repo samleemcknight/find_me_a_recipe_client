@@ -22,7 +22,8 @@ export default function Login(props) {
 
   const setUser = async () => {
     await getUser
-    setRedirect(true)
+    if (user) setRedirect(true)
+    else Alert.alert("incorrect login information")
   }
 
   const authenticate = () => {
