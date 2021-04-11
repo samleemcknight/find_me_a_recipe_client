@@ -45,7 +45,6 @@ class AuthModel {
   static logout = () => {
     return fetch(`${url}/logout`)
     .then(res => {
-      console.log("logged out")
       res.json()
     })
   }
