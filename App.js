@@ -28,6 +28,7 @@ export default function App() {
       .then(response => {
         if (response.username) {
           setLoggedIn(true)
+          return "username"
         } else {
           return Alert.alert("Incorrect Username/Password", "Please try again")
         }

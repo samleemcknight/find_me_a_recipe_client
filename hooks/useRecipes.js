@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import RecipeModel from '../models/recipes'
-import RecipeData from '../recipeData.json'
-import showRecipe from '../showRecipe.json'
+
+import IngredientModel from '../models/ingredient'
 
 export default function useRecipes(recipeId) {
   const [recipes, setRecipes] = useState([])
@@ -15,10 +15,16 @@ export default function useRecipes(recipeId) {
     }
     else {
       // commented out for the moment to prevent unecessary calls to API
-
-    RecipeModel.getRecipes().then(data => {
-      setRecipes(data.recipes)
-    })
+      IngredientModel.all().then(data => {
+        if (typeof data.ingredients[0] === "undefined") {
+          setRecipes([null])
+        }
+        else {
+          RecipeModel.getRecipes().then(data => {
+            setRecipes(data.recipes)
+          })
+        }
+      })
 
     // sorting function to favor fewest missed ingredients over used ingredients
     function sortByMissed(a, b) {

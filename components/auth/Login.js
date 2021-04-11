@@ -20,15 +20,15 @@ export default function Login(props) {
     setPassword(password)
   }, [password])
 
-  const setUser = async () => {
-    await getUser
-    if (user) setRedirect(true)
-    else Alert.alert("incorrect login information")
-  }
+  // const setUser = async () => {
+  //   await getUser()
+  //   setRedirect(true)
+  // }
 
   const authenticate = () => {
     props.authenticate(username, password)
-    setUser()
+    getUser()
+    setRedirect(true)
   }
 
   return(

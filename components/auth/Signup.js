@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { Text, SafeAreaView, Alert, TextInput, TouchableOpacity } from 'react-native';
-import { Redirect } from 'react-router-native'
+import { Text, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native';
+import { Redirect, Link } from 'react-router-native'
 
 import AuthModel from '../../models/auth'
 
@@ -30,12 +30,11 @@ export default function Signup(props) {
     setPassword(password)
   }, [password])
   //
-  // uses hook to get user, then redirect
-  const setUser = async () => {
-    await getUser
-    if (user) setRedirect(true)
-    // else  Alert.alert("Registration Error", "There was an error. Please try again.")
-  }
+  
+  // const setUser = async () => {
+  //   await getUser
+  //   setRedirect(true)
+  // }
 
   const register = () => {
     props.register({
@@ -43,7 +42,9 @@ export default function Signup(props) {
       password: password,
       email: email
     })
-    setUser()
+    // uses hook to get user, then redirect
+    getUser()
+    setRedirect(true)
   }
 
   return(
@@ -78,6 +79,12 @@ export default function Signup(props) {
         <Text style={styles.button}>Sign Up</Text>
         {redirect ? <Redirect to="/Pantry" /> : <></>}
       </TouchableOpacity>
+      <View style={{flexDirection: "row", marginTop: 30}}>
+        <Text style={{fontSize: 18}}>Have an Account? </Text>
+        <Link to="/">
+          <Text style={{fontSize: 18, textDecorationLine: "underline", color: "#1021f1"}}>Sign In.</Text>
+        </Link>
+      </View>
     </SafeAreaView>
   )
 }

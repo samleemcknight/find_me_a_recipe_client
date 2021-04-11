@@ -18,6 +18,9 @@ export default function Recipes() {
   }, []);
 
   const renderRecipes = (recipes) => {
+    if (recipes[0] === null) {
+      return <Text style={{textAlign: "center", fontSize: 18, marginTop: 30}}>You need to add ingredients before you can get recipe suggestions.</Text>
+    }
     return recipes.map((recipe, index) => (
       <View style={styles.view} key={index}>
         <Link to={`Recipes/${recipe.id}`} component={TouchableOpacity} activeOpacity={0.3}>
