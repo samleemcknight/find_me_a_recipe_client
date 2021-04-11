@@ -15,6 +15,10 @@ class CookbookModel {
   }
 
   // edit recipe in cookbook
+  static edit = async (id) => {
+    const recipe = await fetch(`${url}/edit/${id}`)
+    // return logic:
+  }
 
   // remove recipe from cookbook 
   static deleteRecipe = async (id) => {

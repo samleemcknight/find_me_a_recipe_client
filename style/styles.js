@@ -29,7 +29,7 @@ module.exports = {
   button: {
     fontSize: 30,
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
   },
   background: {
     backgroundColor: "#135762",
@@ -50,6 +50,29 @@ module.exports = {
     padding: 5,
     fontSize: 20,
     marginBottom: 10
+  },
+  editView: {
+    flex: 1, 
+    position: "absolute", 
+    backgroundColor: "white", 
+    width: "100%", height: "100%", 
+    padding: 15
+  },
+  editForm: {
+    width: 300,
+    borderBottomColor: "#000",
+    borderBottomWidth: 0.5,
+    textAlign: "left",
+    padding: 10,
+    fontSize: 18
+  },
+  labelText: {
+    fontSize: 20,
+    marginTop: 20,
+    marginBottom: 20,
+    fontWeight: "bold",
+    width: "100%",
+    textAlign: "left",
   },
   pantryContainer : {
     flex: 1,

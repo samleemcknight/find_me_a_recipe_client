@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import {View, Text, Button, Alert, ScrollView} from 'react-native'
-import {Redirect} from 'react-router-native'
+import {Redirect, Link, Route, NativeRouter} from 'react-router-native'
+
+import EditCookbook from './EditCookbook'
 
 import CookbookModel from '../models/cookbook'
 import CookbookCard from './CookbookCard'
@@ -45,6 +47,7 @@ export default function ShowCookbook(props) {
   }
 
   return (
+    <NativeRouter>
     <ScrollView style={{flex:1, marginTop: 100}}>
       { recipe 
       ? 
@@ -56,9 +59,9 @@ export default function ShowCookbook(props) {
       <Text style={{padding: 10, fontSize: 18}} >
         <Text style={{fontWeight: "bold"}}>Instructions: </Text><Text>{recipe.instructions}</Text>
       </Text>
-      <View style={{marginBottom: 5}} >
-        <Button title="Edit" onPress={() => {}} color="blue"/>
-      </View>
+      <Link style={{marginBottom: 5}} to={`/Edit/${recipe.id}`} >
+        <Text style={{textAlign: "center", fontSize: 18, color: "blue"}} >Edit</Text>
+      </Link>
       <View style={{marginBottom: 20}} >
         <Button title="Remove from Favorites" onPress={deleteDialog} color="red"/>
       </View>
@@ -66,7 +69,9 @@ export default function ShowCookbook(props) {
       :
       <Text>Loading...</Text>
       }
+      <Route exact path="/Edit/:id" render={() => <EditCookbook {...recipe} />} />
       {redirect ? <Redirect to="/Cookbook" /> : <></>}
     </ScrollView>
+    </NativeRouter>
   )
 }

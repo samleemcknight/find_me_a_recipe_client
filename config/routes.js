@@ -6,7 +6,7 @@ import Recipes from '../components/Recipes'
 import ShowRecipe from '../components/ShowRecipe'
 import Cookbook from '../components/Cookbook'
 import ShowCookbook from "../components/ShowCookbook";
-import Login from '../components/auth/Login'
+import EditCookbook from '../components/EditCookbook'
 
 const routes = () => {
   return (
@@ -14,6 +14,7 @@ const routes = () => {
       <Route exact path="/Recipes" component={Recipes} />
       <Route exact path="/Pantry" component={PantryList}/>
       <Route path="/Recipes/:id" component={ShowRecipe} />
+      {/* <Route path="/Edit/:id" component={EditCookbook} /> */}
       <Route exact path="/Cookbook" component={Cookbook} />
       <Route path="/Cookbook/:id" component={ShowCookbook} />
     </Switch>
