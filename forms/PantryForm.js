@@ -14,9 +14,7 @@ export default function PantryForm() {
   const [redirect, setRedirect] = useState(false)
 
   const handleText = (event) => {
-    event.preventDefault()
-    // setIngredients(arr => [...arr, {key: (ingredients.length+1).toString(), name: ingredient}])
-    // setIngredient("")  
+    event.preventDefault() 
     IngredientModel.addIngredient(ingredient)
     .then(data => {
       setPantryItem(ingredient)

@@ -32,7 +32,9 @@ module.exports = {
     textAlign: "center",
   },
   background: {
+    height: 50,
     backgroundColor: "#135762",
+    justifyContent: "center"
   },
   form: {
     width: 300,

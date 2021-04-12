@@ -32,7 +32,7 @@ export default function App() {
           setLoggedIn(true)
           setRedirect(true)
         } 
-      }).catch(error => Alert.alert("Incorrect Username/Password", "Please try again"))
+      }).catch(error => Alert.alert("There was a problem", "Please try again"))
     } else {
       return Alert.alert("You are already logged in")
     }
@@ -66,7 +66,7 @@ export default function App() {
   return (
     <NativeRouter>
         <StatusBar barStyle="light-content" translucent={true} />
-        <Route exact path="/" render={() => <Login authenticate={authenticate}  />} />
+        {loggedIn ? <Redirect to="/Pantry" /> : <Route exact path="/" render={() => <Login authenticate={authenticate}  />} />}
         <Route exact path="/Signup" render={() => <Signup register={register} />} />
         {loggedIn ? <Header logout={logout} /> : <></> }
         {loggedIn ? <Routes logout={logout} /> : <></> }
