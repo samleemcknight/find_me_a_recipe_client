@@ -1,5 +1,6 @@
 import {Alert} from 'react-native'
 const url = 'http://192.168.86.220:4000/api/v1/auth/'
+// const url = 'https://limitless-atoll-35923.herokuapp.com/api/v1/auth'
 
 class AuthModel {
 

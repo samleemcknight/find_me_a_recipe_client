@@ -20,10 +20,10 @@ export default function ShowRecipes(props) {
       "Added to Favorites!",
       `You can now find this recipe in your cookbook!`
     )
-    })
     setTimeout(() => {
       props.history.push(`/Cookbook`)
     }, 700);
+    })
   }
 
   const favoriteButton = () => {

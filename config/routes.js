@@ -8,11 +8,11 @@ import Cookbook from '../components/Cookbook'
 import ShowCookbook from "../components/ShowCookbook";
 import EditCookbook from '../components/EditCookbook'
 
-const routes = () => {
+const routes = (props) => {
   return (
     <Switch>
       <Route exact path="/Recipes" component={Recipes} />
-      <Route exact path="/Pantry" component={PantryList}/>
+      <Route exact path="/Pantry" render={() => <PantryList logout={props.logout} />}/>
       <Route path="/Recipes/:id" component={ShowRecipe} />
       
       <Route exact path="/Cookbook" component={Cookbook} />

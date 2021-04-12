@@ -14,12 +14,14 @@ export default function PantryItem(props) {
     })
   }, [props.ingredient])
 
-  const deleteItem = async (item) => {
-    await IngredientModel.delete(item.name)
-    const updatedData = pantry.filter(el => el !== item)
-    // Animate list to close gap when item is deleted
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
-    setPantry(updatedData)
+  const deleteItem = (item) => {
+    IngredientModel.delete(item.name).then(res => {
+      const updatedData = pantry.filter(el => el !== item)
+
+      // Animate list to close gap when item is deleted
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+      setPantry(updatedData)
+    })
   }
 
   const renderItem = ({item}) => (

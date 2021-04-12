@@ -18,9 +18,10 @@ export default function App() {
 
   useEffect(() => {
     if (user) {
-      
       setLoggedIn(true)
-    } 
+    } else {
+      setLoggedIn(false)
+    }
   }, [user])
 
   const authenticate = (username, password) => {
@@ -54,6 +55,7 @@ export default function App() {
     }).then(res => {
       
       if (res.message === "success") {
+        console.log(res)
         setLoggedIn(true)
         setRedirect(true)
       } else {
@@ -68,7 +70,7 @@ export default function App() {
         <Route exact path="/" render={() => <Login authenticate={authenticate}  />} />
         <Route exact path="/Signup" render={() => <Signup register={register} />} />
         {loggedIn ? <Header logout={logout} /> : <></> }
-        {loggedIn ? <Routes /> : <></> }
+        {loggedIn ? <Routes logout={logout} /> : <></> }
         {redirect ? <Redirect to="/Pantry" /> : <></>}
     </NativeRouter>
   );
