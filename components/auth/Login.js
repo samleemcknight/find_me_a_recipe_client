@@ -30,7 +30,8 @@ export default function Login(props) {
   //   setRedirect(true)
   // }
 
-  const authenticate = () => {
+  const authenticate = (event) => {
+    event.preventDefault()
     props.authenticate(username, password)
     getUser()
   }

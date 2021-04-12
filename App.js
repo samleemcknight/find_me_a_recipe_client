@@ -53,7 +53,7 @@ export default function App() {
       password: data.password,
       email: data.email
     }).then(res => {
-      
+      console.log(res)
       if (res.message === "success") {
         // setLoggedIn(true)
         // setRedirect(true)
