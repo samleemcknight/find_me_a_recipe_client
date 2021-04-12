@@ -49,7 +49,8 @@ module.exports = {
     textAlign: "center",
     padding: 5,
     fontSize: 20,
-    marginBottom: 10
+    marginBottom: 15,
+    marginTop: 10
   },
   editView: {
     flex: 1, 

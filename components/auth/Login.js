@@ -37,7 +37,7 @@ export default function Login(props) {
 
   return(
     <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
-      <Text style={{fontSize:35, marginBottom: 50, fontFamily: "Raleway_500Medium"}}>Find Me A Recipe</Text>
+      <Text style={{fontSize:35, marginBottom: 50, fontFamily: "Raleway_500Medium"}}>Find Me A Recipe!</Text>
       <Text style={{fontSize: 35, marginBottom: 40, fontFamily: "Raleway_300Light"}} >Login:</Text>
       <TextInput 
         style={styles.loginForm}

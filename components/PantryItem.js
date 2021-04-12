@@ -8,8 +8,13 @@ export default function PantryItem(props) {
   
   // use effect
   useEffect(() => {
+    
     IngredientModel.all()
     .then(data => {
+      if(data.status === 404) {
+        console.log("404 status!")
+        setPantry(nulll)
+      }
       setPantry(data.ingredients.reverse())
     })
   }, [props.ingredient])

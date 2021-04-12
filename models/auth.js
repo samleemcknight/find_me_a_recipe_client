@@ -1,6 +1,6 @@
 import {Alert} from 'react-native'
-const url = 'http://192.168.86.220:4000/api/v1/auth/'
-// const url = 'https://limitless-atoll-35923.herokuapp.com/api/v1/auth'
+// const url = 'http://192.168.86.220:4000/api/v1/auth/'
+const url = 'https://limitless-atoll-35923.herokuapp.com/api/v1/auth'
 
 class AuthModel {
 
@@ -29,25 +29,26 @@ class AuthModel {
     }
   }
 
-  static login = (username, password) => {
-    return fetch(`${url}/login`, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({username: username, password: password})
-      })
-    .then(res => {
-      return res.json()
-    })
-
+  static login = async (username, password) => {
+    try {
+      const user = await fetch(`${url}/login`, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({username: username, password: password})
+        })
+      return user.json()
+    } catch (error) {
+      return error
+    }
   }
 
   static logout = () => {
     return fetch(`${url}/logout`)
     .then(res => {
       res.json()
-    })
+    }).catch(error => error)
   }
 }
 
