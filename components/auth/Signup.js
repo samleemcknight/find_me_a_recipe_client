@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { Text, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native';
 import { Redirect, Link } from 'react-router-native'
 
-import AuthModel from '../../models/auth'
-
 import useAuth from '../../hooks/useAuth'
 
 import { useFonts, Raleway_500Medium } from '@expo-google-fonts/raleway';
@@ -43,6 +41,7 @@ export default function Signup(props) {
       password: password,
       email: email
     })
+    setRedirect(true)
   }
 
   return(
@@ -82,6 +81,7 @@ export default function Signup(props) {
           <Text style={{fontSize: 18, textDecorationLine: "underline", color: "#1021f1"}}>Sign In.</Text>
         </Link>
       </View>
+      {redirect ? <Redirect to="/" /> : <></>}
     </SafeAreaView>
   )
 }

@@ -55,9 +55,8 @@ export default function App() {
     }).then(res => {
       
       if (res.message === "success") {
-        console.log(res)
-        setLoggedIn(true)
-        setRedirect(true)
+        // setLoggedIn(true)
+        // setRedirect(true)
       } else {
         Alert.alert("Something went wrong. Please try again")
       }
