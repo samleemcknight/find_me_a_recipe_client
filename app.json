@@ -28,7 +28,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "Two-Server App with Express Backend.  Find Me A Recipe is committed to eliminating food waste and encouraging explorative cooking choices. The App accomplishes this by suggesting recipes to users based on on-hand ingredients in the pantry or refrigerator. \n\nCopyright © 2021 Samuel McKnight, All Rights Reserved",
+    "description": "This is a two-Server App with Express Backend.  Find Me A Recipe is committed to eliminating food waste and encouraging explorative cooking choices. The App accomplishes this by suggesting recipes to users based on on-hand ingredients in the pantry or refrigerator. \n\nCopyright © 2021 Samuel McKnight, All Rights Reserved",
     "githubUrl": "https://github.com/samleemcknight/final_project_client"
   }
 }

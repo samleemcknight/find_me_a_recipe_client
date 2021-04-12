@@ -1,7 +1,6 @@
 import {Alert} from 'react-native'
 
 const url = 'https://limitless-atoll-35923.herokuapp.com/api/v1/cookbook/'
-// const url = 'http://192.168.86.220:4000/api/v1/cookbook/'
 
 class CookbookModel {
 

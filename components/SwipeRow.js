@@ -1,3 +1,6 @@
+// all of this logic is extracted from this Medium article by Daniel Merrill:
+// https://medium.com/async-la/swipe-to-delete-with-reanimated-react-native-gesture-handler-bd7d66085aee
+
 import React from 'react';
 import {
   PanGestureHandler,
