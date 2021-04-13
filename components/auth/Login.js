@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Text, SafeAreaView, View, TextInput, TouchableOpacity } from 'react-native';
+import { Text, SafeAreaView, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { Link, Redirect } from 'react-router-native'
 
 import useAuth from '../../hooks/useAuth'
@@ -31,6 +31,8 @@ export default function Login(props) {
   // }
 
   const authenticate = (event) => {
+    if (username === "") return Alert.alert("You must input a valid username")
+    if (password === "") return Alert.alert("You must input a valid password")
     event.preventDefault()
     props.authenticate(username, password)
     getUser()
@@ -53,7 +55,7 @@ export default function Login(props) {
         autoCapitalize="none"
         secureTextEntry={true}
         onChangeText={(password) => {setPassword(password)}}
-        onSubmitEditing={() => {}}
+        onSubmitEditing={authenticate}
         value={password}/>
       <TouchableOpacity
         style={{backgroundColor: "#AD260A", width: "30%", borderRadius: 25, padding: 6, marginTop: 10}}

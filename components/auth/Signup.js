@@ -40,6 +40,8 @@ export default function Signup(props) {
     if (password !== password2) {
       return Alert.alert("Passwords Do Not Match")
     }
+    if (username === "") return Alert.alert("You must input a valid username")
+    if (password === "") return Alert.alert("You must input a valid password")
     props.register({
       username: username,
       password: password,
@@ -60,14 +62,14 @@ export default function Signup(props) {
         value={email}/>
       <TextInput 
         style={styles.loginForm}
-        placeholder="username"
+        placeholder="username (required)"
         autoCapitalize="none"
         onChangeText={(text) => {setUsername(text)}}
         onSubmitEditing={() => {}}
         value={username}/>
       <TextInput 
         style={styles.loginForm}
-        placeholder="password"
+        placeholder="password (required"
         autoCapitalize="none"
         secureTextEntry={true}
         onChangeText={(password) => {setPassword(password)}}
@@ -80,7 +82,7 @@ export default function Signup(props) {
         autoCapitalize="none"
         secureTextEntry={true}
         onChangeText={(password) => {setPassword2(password)}}
-        onSubmitEditing={() => {}}
+        onSubmitEditing={register}
         value={password2}/>
       <TouchableOpacity
         style={{backgroundColor: "#1CAAB3", width: "40%", borderRadius: 25, padding: 6, marginTop: 10}}
