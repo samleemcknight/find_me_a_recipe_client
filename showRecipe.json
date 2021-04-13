@@ -1,0 +1,698 @@
+[
+  {
+    "recipe": {
+      "vegetarian": false,
+      "vegan": false,
+      "glutenFree": true,
+      "dairyFree": false,
+      "veryHealthy": false,
+      "cheap": false,
+      "veryPopular": false,
+      "sustainable": false,
+      "weightWatcherSmartPoints": 35,
+      "gaps": "no",
+      "lowFodmap": false,
+      "preparationMinutes": 30,
+      "cookingMinutes": 125,
+      "aggregateLikes": 0,
+      "spoonacularScore": 68,
+      "healthScore": 37,
+      "creditsText": "Foodnetwork",
+      "sourceName": "Foodnetwork",
+      "pricePerServing": 436.24,
+      "extendedIngredients": [
+        {
+          "id": 1230,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "buttermilk.jpg",
+          "consistency": "solid",
+          "name": "buttermilk",
+          "nameClean": "buttermilk",
+          "original": "1 quart buttermilk",
+          "originalString": "1 quart buttermilk",
+          "originalName": "buttermilk",
+          "amount": 1,
+          "unit": "quart",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 1,
+              "unitShort": "qt",
+              "unitLong": "quart"
+            },
+            "metric": {
+              "amount": 946.353,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 5006,
+          "aisle": "Meat",
+          "image": "whole-chicken.jpg",
+          "consistency": "solid",
+          "name": "chicken",
+          "nameClean": "whole chicken",
+          "original": "1 (4 to 6-pound) chicken",
+          "originalString": "1 (4 to 6-pound) chicken",
+          "originalName": "chicken",
+          "amount": 4,
+          "unit": "pound",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 4,
+              "unitShort": "lb",
+              "unitLong": "pounds"
+            },
+            "metric": {
+              "amount": 1.814,
+              "unitShort": "kilogram",
+              "unitLong": "kilograms"
+            }
+          }
+        },
+        {
+          "id": 11165,
+          "aisle": "Produce",
+          "image": "cilantro.png",
+          "consistency": "solid",
+          "name": "cilantro leaves",
+          "nameClean": "fresh cilantro",
+          "original": "1 bunch freshly chopped cilantro leaves",
+          "originalString": "1 bunch freshly chopped cilantro leaves",
+          "originalName": "freshly chopped cilantro leaves",
+          "amount": 1,
+          "unit": "bunch",
+          "meta": [
+            "chopped"
+          ],
+          "metaInformation": [
+            "chopped"
+          ],
+          "measures": {
+            "us": {
+              "amount": 1,
+              "unitShort": "bunch",
+              "unitLong": "bunch"
+            },
+            "metric": {
+              "amount": 1,
+              "unitShort": "bunch",
+              "unitLong": "bunch"
+            }
+          }
+        },
+        {
+          "id": 2018,
+          "aisle": "Spices and Seasonings",
+          "image": "fennel-seeds.jpg",
+          "consistency": "solid",
+          "name": "fennel seed",
+          "nameClean": "fennel seeds",
+          "original": "3 tablespoons fennel seed",
+          "originalString": "3 tablespoons fennel seed",
+          "originalName": "fennel seed",
+          "amount": 3,
+          "unit": "tablespoons",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 3,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 3,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 11215,
+          "aisle": "Produce",
+          "image": "garlic.png",
+          "consistency": "solid",
+          "name": "garlic",
+          "nameClean": "garlic",
+          "original": "4 cloves fresh minced garlic",
+          "originalString": "4 cloves fresh minced garlic",
+          "originalName": "fresh minced garlic",
+          "amount": 4,
+          "unit": "cloves",
+          "meta": [
+            "fresh",
+            "minced"
+          ],
+          "metaInformation": [
+            "fresh",
+            "minced"
+          ],
+          "measures": {
+            "us": {
+              "amount": 4,
+              "unitShort": "cloves",
+              "unitLong": "cloves"
+            },
+            "metric": {
+              "amount": 4,
+              "unitShort": "cloves",
+              "unitLong": "cloves"
+            }
+          }
+        },
+        {
+          "id": 1022020,
+          "aisle": "Spices and Seasonings",
+          "image": "garlic-powder.png",
+          "consistency": "solid",
+          "name": "garlic powder",
+          "nameClean": "garlic powder",
+          "original": "2 tablespoons garlic powder",
+          "originalString": "2 tablespoons garlic powder",
+          "originalName": "garlic powder",
+          "amount": 2,
+          "unit": "tablespoons",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 2,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 2,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 1002014,
+          "aisle": "Spices and Seasonings",
+          "image": "ground-cumin.jpg",
+          "consistency": "solid",
+          "name": "ground cumin",
+          "nameClean": "cumin",
+          "original": "3 tablespoons ground cumin",
+          "originalString": "3 tablespoons ground cumin",
+          "originalName": "ground cumin",
+          "amount": 3,
+          "unit": "tablespoons",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 3,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 3,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 1002014,
+          "aisle": "Spices and Seasonings",
+          "image": "ground-cumin.jpg",
+          "consistency": "solid",
+          "name": "ground cumin",
+          "nameClean": "cumin",
+          "original": "4 tablespoons ground cumin",
+          "originalString": "4 tablespoons ground cumin",
+          "originalName": "ground cumin",
+          "amount": 4,
+          "unit": "tablespoons",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 4,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 4,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 19296,
+          "aisle": "Nut butters, Jams, and Honey",
+          "image": "honey.png",
+          "consistency": "liquid",
+          "name": "honey",
+          "nameClean": "honey",
+          "original": "2 ounces honey",
+          "originalString": "2 ounces honey",
+          "originalName": "honey",
+          "amount": 2,
+          "unit": "ounces",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 2,
+              "unitShort": "oz",
+              "unitLong": "ounces"
+            },
+            "metric": {
+              "amount": 56.699,
+              "unitShort": "g",
+              "unitLong": "grams"
+            }
+          }
+        },
+        {
+          "id": 4053,
+          "aisle": "Oil, Vinegar, Salad Dressing",
+          "image": "olive-oil.jpg",
+          "consistency": "liquid",
+          "name": "olive oil",
+          "nameClean": "olive oil",
+          "original": "1/2 cup olive oil",
+          "originalString": "1/2 cup olive oil",
+          "originalName": "olive oil",
+          "amount": 0.5,
+          "unit": "cup",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 118.294,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 4053,
+          "aisle": "Oil, Vinegar, Salad Dressing",
+          "image": "olive-oil.jpg",
+          "consistency": "liquid",
+          "name": "olive oil",
+          "nameClean": "olive oil",
+          "original": "3 tablespoons olive oil",
+          "originalString": "3 tablespoons olive oil",
+          "originalName": "olive oil",
+          "amount": 3,
+          "unit": "tablespoons",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 3,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 3,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 2026,
+          "aisle": "Spices and Seasonings",
+          "image": "onion-powder.jpg",
+          "consistency": "solid",
+          "name": "onion powder",
+          "nameClean": "onion powder",
+          "original": "2 tablespoons onion powder",
+          "originalString": "2 tablespoons onion powder",
+          "originalName": "onion powder",
+          "amount": 2,
+          "unit": "tablespoons",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 2,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 2,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 2028,
+          "aisle": "Spices and Seasonings",
+          "image": "paprika.jpg",
+          "consistency": "solid",
+          "name": "paprika",
+          "nameClean": "paprika",
+          "original": "2 tablespoons paprika",
+          "originalString": "2 tablespoons paprika",
+          "originalName": "paprika",
+          "amount": 2,
+          "unit": "tablespoons",
+          "meta": [],
+          "metaInformation": [],
+          "measures": {
+            "us": {
+              "amount": 2,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 2,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            }
+          }
+        },
+        {
+          "id": 1102047,
+          "aisle": "Spices and Seasonings",
+          "image": "salt-and-pepper.jpg",
+          "consistency": "solid",
+          "name": "salt and pepper",
+          "nameClean": "salt and pepper",
+          "original": "Salt and freshly ground black pepper",
+          "originalString": "Salt and freshly ground black pepper",
+          "originalName": "Salt and freshly ground black pepper",
+          "amount": 4,
+          "unit": "servings",
+          "meta": [
+            "black",
+            "freshly ground"
+          ],
+          "metaInformation": [
+            "black",
+            "freshly ground"
+          ],
+          "measures": {
+            "us": {
+              "amount": 4,
+              "unitShort": "servings",
+              "unitLong": "servings"
+            },
+            "metric": {
+              "amount": 4,
+              "unitShort": "servings",
+              "unitLong": "servings"
+            }
+          }
+        }
+      ],
+      "id": 345210,
+      "title": "Split Whole Cumin Chicken",
+      "readyInMinutes": 155,
+      "servings": 4,
+      "sourceUrl": "http://www.foodnetwork.com/recipes/split-whole-cumin-chicken-recipe.html",
+      "image": "https://spoonacular.com/recipeImages/345210-556x370.jpeg",
+      "imageType": "jpeg",
+      "summary": "You can never have too many main course recipes, so give Split Whole Cumin Chicken a try. This recipe serves 4. One portion of this dish contains around <b>96g of protein</b>, <b>117g of fat</b>, and a total of <b>1591 calories</b>. For <b>$5.93 per serving</b>, this recipe <b>covers 50%</b> of your daily requirements of vitamins and minerals. This recipe from Foodnetwork has 1 fans. If you have olive oil, garlic, salt and pepper, and a few other ingredients on hand, you can make it. To use up the honey you could follow this main course with the <a href=\"https://spoonacular.com/recipes/honey-gingerbread-133051\">Honey Gingerbread</a> as a dessert. From preparation to the plate, this recipe takes about <b>2 hours and 35 minutes</b>. It is a good option if you're following a <b>gluten free, primal, and ketogenic</b> diet. All things considered, we decided this recipe <b>deserves a spoonacular score of 71%</b>. This score is pretty good. Try <a href=\"https://spoonacular.com/recipes/split-pea-soup-with-caramelized-onions-and-cumin-seed-100807\">Split Pea Soup With Caramelized Onions and Cumin Seed</a>, <a href=\"https://spoonacular.com/recipes/how-to-cut-apart-a-chicken-cumin-chicken-with-black-bean-stuffing-517484\">How to Cut Apart a Chicken & Cumin Chicken with Black Bean Stuffing</a>, and <a href=\"https://spoonacular.com/recipes/lemon-cumin-chicken-291324\">Lemon-Cumin Chicken</a> for similar recipes.",
+      "cuisines": [],
+      "dishTypes": [
+        "lunch",
+        "main course",
+        "main dish",
+        "dinner"
+      ],
+      "diets": [
+        "gluten free",
+        "primal"
+      ],
+      "occasions": [],
+      "winePairing": {},
+      "instructions": "For the rub:                          Mix ingredients in a small bowl and set aside until ready to use.                          For the basting liquid:                          Combine the ingredients in small bowl and place by the grill with a brush for basting.                          Place chicken breast down. Grab tail and cut along the back bone, do the same on the other side and remove the back bone.                          Add the marinade to a resealable bag and add the chicken. Let marinate for 1 to 2 hours in the refrigerator.                          Remove chicken from marinade and pat skin dry. Coat the skin of the chicken with the rub and carefully place some of the rub under skin. Return to the refrigerator for a minimum of 20 minutes.                          Remove the chicken from the refrigerator and place the bone sides down. Tuck legs and wings to breast. Butcher string is great for this, just cross the legs and tie them so that only the joint of the thigh is touching the grill. Grill over direct flame or high heat for 10 to 15 minutes with the grill closed.                          After 10 to 15 minutes turn the heat to medium-low or move chicken from direct heat and grill until cooked through, basting every 15 minutes.                          When cooked through, remove the chicken from the grill and peel off the skin. Place the chicken, flesh side down, on the grill over high heat to get grill marks. Place the reserved skin on the top level of grill to crisp. Transfer the chicken to a serving platter. Chop the crisped skin on a cutting board and sprinkle over the chicken.",
+      "analyzedInstructions": [
+        {
+          "name": "For the rub",
+          "steps": [
+            {
+              "number": 1,
+              "step": "Mix ingredients in a small bowl and set aside until ready to use.",
+              "ingredients": [],
+              "equipment": [
+                {
+                  "id": 404783,
+                  "name": "bowl",
+                  "localizedName": "bowl",
+                  "image": "bowl.jpg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "For the basting liquid",
+          "steps": [
+            {
+              "number": 1,
+              "step": "Combine the ingredients in small bowl and place by the grill with a brush for basting.",
+              "ingredients": [],
+              "equipment": [
+                {
+                  "id": 404706,
+                  "name": "grill",
+                  "localizedName": "grill",
+                  "image": "grill.jpg"
+                },
+                {
+                  "id": 404783,
+                  "name": "bowl",
+                  "localizedName": "bowl",
+                  "image": "bowl.jpg"
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "step": "Place chicken breast down. Grab tail and cut along the back bone, do the same on the other side and remove the back bone.",
+              "ingredients": [
+                {
+                  "id": 5062,
+                  "name": "chicken breast",
+                  "localizedName": "chicken breast",
+                  "image": "chicken-breasts.png"
+                },
+                {
+                  "id": 0,
+                  "name": "bone",
+                  "localizedName": "bone",
+                  "image": ""
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 3,
+              "step": "Add the marinade to a resealable bag and add the chicken.",
+              "ingredients": [
+                {
+                  "id": 0,
+                  "name": "marinade",
+                  "localizedName": "marinade",
+                  "image": "seasoning.png"
+                },
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 4,
+              "step": "Let marinate for 1 to 2 hours in the refrigerator.",
+              "ingredients": [],
+              "equipment": [],
+              "length": {
+                "number": 120,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 5,
+              "step": "Remove chicken from marinade and pat skin dry. Coat the skin of the chicken with the rub and carefully place some of the rub under skin. Return to the refrigerator for a minimum of 20 minutes.",
+              "ingredients": [
+                {
+                  "id": 0,
+                  "name": "marinade",
+                  "localizedName": "marinade",
+                  "image": "seasoning.png"
+                },
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                },
+                {
+                  "id": 1012034,
+                  "name": "dry seasoning rub",
+                  "localizedName": "dry seasoning rub",
+                  "image": "seasoning.png"
+                }
+              ],
+              "equipment": [],
+              "length": {
+                "number": 20,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 6,
+              "step": "Remove the chicken from the refrigerator and place the bone sides down. Tuck legs and wings to breast. Butcher string is great for this, just cross the legs and tie them so that only the joint of the thigh is touching the grill. Grill over direct flame or high heat for 10 to 15 minutes with the grill closed.",
+              "ingredients": [
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                },
+                {
+                  "id": 5100,
+                  "name": "chicken wings",
+                  "localizedName": "chicken wings",
+                  "image": "chicken-wings.png"
+                },
+                {
+                  "id": 0,
+                  "name": "bone",
+                  "localizedName": "bone",
+                  "image": ""
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404706,
+                  "name": "grill",
+                  "localizedName": "grill",
+                  "image": "grill.jpg"
+                }
+              ],
+              "length": {
+                "number": 10,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 7,
+              "step": "After 10 to 15 minutes turn the heat to medium-low or move chicken from direct heat and grill until cooked through, basting every 15 minutes.",
+              "ingredients": [
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404706,
+                  "name": "grill",
+                  "localizedName": "grill",
+                  "image": "grill.jpg"
+                }
+              ],
+              "length": {
+                "number": 25,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 8,
+              "step": "When cooked through, remove the chicken from the grill and peel off the skin.",
+              "ingredients": [
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404706,
+                  "name": "grill",
+                  "localizedName": "grill",
+                  "image": "grill.jpg"
+                }
+              ]
+            },
+            {
+              "number": 9,
+              "step": "Place the chicken, flesh side down, on the grill over high heat to get grill marks.",
+              "ingredients": [
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404706,
+                  "name": "grill",
+                  "localizedName": "grill",
+                  "image": "grill.jpg"
+                }
+              ]
+            },
+            {
+              "number": 10,
+              "step": "Place the reserved skin on the top level of grill to crisp.",
+              "ingredients": [],
+              "equipment": [
+                {
+                  "id": 404706,
+                  "name": "grill",
+                  "localizedName": "grill",
+                  "image": "grill.jpg"
+                }
+              ]
+            },
+            {
+              "number": 11,
+              "step": "Transfer the chicken to a serving platter. Chop the crisped skin on a cutting board and sprinkle over the chicken.",
+              "ingredients": [
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404716,
+                  "name": "cutting board",
+                  "localizedName": "cutting board",
+                  "image": "cutting-board.jpg"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "originalId": null
+    }
+  }
+]
