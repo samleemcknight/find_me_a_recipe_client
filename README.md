@@ -1,7 +1,8 @@
 # Find Me A Recipe!
 
 This is a client-side React-Native app
-
+Published URL: https://expo.io/@sammcknight/projects/find_me_a_recipe
+- note: the app does not yet work on Android
 
 ## Find Me a Recipe
 
