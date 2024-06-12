@@ -1,8 +1,8 @@
 # Find Me A Recipe!
 
-This is a client-side React-Native app
+This is a client-side React-Native app that interacts with the [Recipe API](https://github.com/samleemcknight/Find-Me-A-Recipe-API)
 Published URL: https://expo.io/@sammcknight/projects/find_me_a_recipe
-- note: the app does not yet work on Android
+- note: the app has not been updated in over 3 years
 
 ## Find Me a Recipe
 
